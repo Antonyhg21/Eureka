@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Selección</title>
+</head>
+<body>
+    <form id="miFormulario" action="procesar.php" method="post">
+        <select name="opcion" id="opcion" onchange="actualizarCampo()">
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+        </select>
+
+        <!-- Campo donde se reflejará el valor seleccionado -->
+        <input type="text" name="valor_reflejado" id="valor_reflejado" readonly>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        function actualizarCampo() {
+            // Obtener el elemento select y el valor seleccionado
+            var select = document.getElementById("opcion");
+            var valorSeleccionado = select.options[select.selectedIndex].value;
+
+            // Actualizar el valor en el campo de texto
+            document.getElementById("valor_reflejado").value = valorSeleccionado;
+        }
+    </script>
+
+
+
+
+
+
+<ul>
+    <li>hola 1</li>
+    <li>hola 2</li>
+    <li>hola 3</li>
+    <li>hola 4</li>
+    <li>hola 5</li>
+    <li>hola 6</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
