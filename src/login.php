@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="../img/icon.ico" />
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/style-form.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
     <title>Ingresar</title>
 </head>
 <body>

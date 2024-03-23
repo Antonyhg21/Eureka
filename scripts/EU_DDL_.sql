@@ -119,7 +119,7 @@ CREATE TABLE tab_usuarios
 CREATE TABLE tab_seekfind
 (
     id_seekfind         INTEGER             NOT NULL,       -- IDENTIFICADOR QUE CORRESPONDERA AL NúMERO DE PUBLICACIÓN, ÉSTA LA PROPORCIONARÁ EL SISTEMA.
-    id_usuario          VARCHAR(10)         NOT NULL,       -- IDENTIFICACIÓN DEL USUARIO (NÚMERO DE DOCUMENTO).
+    id_usuario          VARCHAR(100)         NOT NULL,       -- CORREO ELECTRÓNICO PROPIO DEL USUARIO.
     id_rol_usuario     	BOOLEAN             NOT NULL,       -- DOS POSIBLES OPCIONES: 1.SEEKER(BUSCADOR/A), 0.FINDER(DESCUBRIDOR/A).
     estado_usuario      BOOLEAN             NOT NULL,       -- DOS POSIBLES OPCIONES: 1.DESCUBRIDOR, 0.DESCUBRIDOR Y BUSCADOR.
     id_tipo             BIGINT              NOT NULL,       -- IDENTIFICADOR AGREGADO POR EL SISTEMA PARA CADA TIPO DE ELEMENTO.
@@ -145,4 +145,20 @@ CREATE TABLE tab_seekfind
     FOREIGN KEY(id_munic, id_sitio)     REFERENCES tab_sitios(id_munic, id_sitio)
 );
 
+-- TABLA DE NOVEDADES, EN DONDE SE ALMACENARAN LAS NOVEDADES DE LOS ELEMENTOS PUBLICADOS POR LOS USUARIOS.
 
+CREATE TABLE tab_novedades
+(
+    id_seekfind         INTEGER             NOT NULL,       -- IDENTIFICADOR QUE CORRESPONDERA AL NúMERO DE PUBLICACIÓN, ÉSTA LA PROPORCIONARÁ EL SISTEMA.
+    id_novedad          BIGINT              NOT NULL,       -- IDENTIFICADOR DE LA NOVEDAD.
+    desc_novedad        VARCHAR(300)        NOT NULL,       -- DESCRIPCIÓN DE LA NOVEDAD.
+    usr_insert          VARCHAR(40)         NOT NULL,
+    fec_insert          TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    usr_update          VARCHAR(40),
+    fec_update          TIMESTAMP WITHOUT TIME ZONE,
+    PRIMARY KEY(id_novedad),
+    FOREIGN KEY(id_seekfind)            REFERENCES tab_seekfind(id_seekfind),
+    FOREIGN KEY(id_usuario)             REFERENCES tab_usuarios(id_usuario)
+);
+
+-- 

@@ -28,7 +28,7 @@ if (!isset($_SESSION['usuario'])) {
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container px-4 px-lg-5">
+            <div class="container-fluid px-lg-3">
                 <a class="navbar-brand" href="home.php">
                 <img src="../img/icon.png" alt="Logo de la empresa" class="mr-2" style="height: 30px; width: 30px;">
                     EUREKA!
@@ -42,15 +42,25 @@ if (!isset($_SESSION['usuario'])) {
                         <li class="nav-item"><a class="nav-link" href="seekfind.php">Publicar un elemento</a></li>
                         <li class="nav-item"><a class="nav-link" href="#footer">Acerca de</a></li>
                         <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell"></i> <!-- Este es el icono de la campana -->
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <!-- Aquí puedes poner tus notificaciones. Por ahora, solo es un texto de prueba. -->
+                            <li><a class="dropdown-item text-truncate" href="#">Notificación 1</a></li>
+                            <li><a class="dropdown-item text-truncate" href="#">Notificación 2</a></li>
+                        </ul>
+                    </li>
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item" href="noti.php">Notificaciones</a></li>
                                 <li><a class="dropdown-item" href="<?php echo "edit_usuarios.php?id_usuario=antackgondez@gmail.com"?>">Actualizar mis datos</a></li>
+                                <li><a class="dropdown-item" href="<?php echo "perfil.php?"?>">Mi perfil</a></li>
                                 <li><a class="dropdown-item" href="<?php echo "lista_usuarios.php?"?>">Administrar usuarios</a></li>
                                 <li><a class="dropdown-item" href="<?php echo "admin.php?"?>">Administrativo</a></li>
-                                <li><a class="dropdown-item" href="cerrar_sesion.php">Cerrar sesión</a></li>                            </ul>
+                                <li><a class="dropdown-item" href="cerrar_sesion.php">Cerrar sesión</a></li>                       </ul>
                         </li>
                     </ul>
                 </div>

@@ -3361,6 +3361,15 @@ textarea.form-control-lg {
   right: 0;
   left: auto;
 }
+#navbarDropdown + .dropdown-menu {
+  width: 300px; /* Cambia esto al tamaño que desees en pantallas grandes */
+}
+
+@media (max-width: 768px) {
+  #navbarDropdown + .dropdown-menu {
+    width: 100%; /* Cambia esto al tamaño que desees en pantallas pequeñas */
+  }
+}
 
 @media (min-width: 576px) {
   .dropdown-menu-sm-start {
