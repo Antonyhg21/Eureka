@@ -3,7 +3,7 @@
 $tipo_elementoId = isset($_GET['tipo_elemento_id']) ? $_GET['tipo_elemento_id'] : null;
 if ($tipo_elementoId !== null) {
     // Realizar la conexión a la base de datos (asegúrate de incluir tus credenciales y configuración)
-    include 'base_de_datos.php'; // Reemplaza 'conexion.php' con el nombre de tu archivo de conexión
+    include 'base_de_datos.php'; // 'base_de_datos.php' archivo que contiene la conexión a la base de datos.
 
     // Consulta para obtener los elementos del tipo de elementos seleccionados
     $consulta = $base_de_datos->prepare('SELECT  a.id_elemento, a.nom_elemento FROM tab_elemento AS a, tab_tipo_elemento AS b 

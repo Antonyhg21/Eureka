@@ -1,46 +1,41 @@
-
 <?php
-/*
-CRUD con PostgreSQL y PHP
-@Jack Antony Hernández González
-@Enero 2024
-==================================================================
-Este archivo inserta los datos enviados a través de formulario.php
-==================================================================
-*/
-?>
-<?php
+// Verificar si todos los campos necesarios fueron enviados desde el formulario
 if (!isset($_POST["id_depto"])  ||
     !isset($_POST["id_munic"])  ||
     !isset($_POST["nom_sitio"]) ||
     !isset($_POST["dir_sitio"]))
     {
+    // Si falta algún campo, terminar la ejecución del script
     exit();
     }
-#Si todo va bien, se ejecuta esta parte del código..., si no, nos jodimos
+// Si todos los campos requeridos están presentes, se continúa con la ejecución
 
+// Incluir el archivo de conexión a la base de datos
 include_once "base_de_datos.php";
-$id_depto           = $_POST["id_depto"];
-$id_munic           = $_POST["id_munic"];
-$nom_sitio          = $_POST["nom_sitio"];
-$dir_sitio          = $_POST["dir_sitio"];
-/*
-Al incluir el archivo "base_de_datos.php", todas sus variables están
-a nuestra disposición. Por lo que podemos acceder a ellas tal como si hubiéramos
-copiado y pegado el código
- */
 
+// Recuperar los valores enviados desde el formulario y almacenarlos en variables
+$id_depto   = $_POST["id_depto"];
+$id_munic   = $_POST["id_munic"];
+$nom_sitio  = $_POST["nom_sitio"];
+$dir_sitio  = $_POST["dir_sitio"];
+
+// Preparar la sentencia SQL para insertar los datos en la base de datos
 $sentencia = $base_de_datos->prepare("SELECT fun_insert_sitios(?,?,?,?);");
-$resultado = $sentencia->execute([$id_depto, $id_munic, $nom_sitio, $dir_sitio]); # Pasar en el mismo orden de los ?
-#execute regresa un booleano. True en caso de que todo vaya bien, falso en caso contrario.
-#Con eso podemos evaluar*/
+
+// Ejecutar la sentencia SQL pasando los valores de las variables en el mismo orden de los ?
+$resultado = $sentencia->execute([$id_depto, $id_munic, $nom_sitio, $dir_sitio]);
+
+// execute() regresa un booleano: true si todo va bien, false en caso contrario
+// Con eso podemos evaluar el resultado de la operación
 echo $resultado;
+
+// Verificar si la ejecución de la sentencia SQL fue exitosa
 if ($resultado === true) {
-    # Redireccionar a la lista
+    // Si el registro se insertó correctamente, mostrar un mensaje y redireccionar al administrador
     echo "Registro Insertado";
-	header("Location: admin.php ");
-} else
-    {
+    header("Location: admin.php");
+} else {
+    // Si la inserción falló, mostrar mensajes de error
     echo "Registro NO Insertado";
     echo "Algo salió mal. Por favor verifica que la tabla exista";
-    }
+}

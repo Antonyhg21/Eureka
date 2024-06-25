@@ -1339,119 +1339,61 @@ INSERT INTO tab_sitios VALUES ('68', '68001', 29, 'Parque de los Colores', 'Carr
 -- (id_usuario, doc_usuario, nom_usuario, ape_usuario, pass_usuario, cel_usuario, dir_usuario, id_depto, id_munic), 
 -- donde id_usuario corresponde al email o correo electronico del usuario, siguiento la integridad referencial con 
 -- la tabla tab_deptos y tab_munics las cuales son las llaves foraneas
-
-INSERT INTO tab_usuarios VALUES ('pedroperez@correo.com', '1234567890', 'Pedro', 'Perez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('marialopez@correo.com', '0987654321', 'Maria', 'Lopez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('yuraniguerrero@correo.com', '1234567890', 'Yurani', 'Guerrero', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('yeritzaguerrero@correo.com', '0987654321', 'Yeritza', 'Guerrero', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('keniacupaque@correo.com', '1234567890', 'Kenia', 'Cupaque', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('alexandrapabon@correo.com', '0987654321', 'Alexandra', 'Pabon', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('pepitoperez@correo.com', '1234567890', 'Pepito', 'Perez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('carlosperez@correo.com', '0987654321', 'Carlos', 'Perez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('jhongonzalez@correo.com', '1234567890', 'Jhon', 'Gonzalez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('samirfigueroa@correo.com', '0987654321', 'Samir', 'Figueroa', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('monicagarcia@correo.com', '1234567890', 'Monica', 'Garcia', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('danygrajales@correo.com', '0987654321', 'Dany', 'Grajales', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('carlosgrajales@correo.com', '1234567890', 'Carlos', 'Grajales', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('jhonrodriguez@correo.com', '0987654321', 'Jhon', 'Rodriguez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('leonardogil@correo.com', '1234567890', 'Leonardo', 'Gil', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
-INSERT INTO tab_usuarios VALUES ('tomashernandez@correo.com', '0987654321', 'Tomas', 'Hernandez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
+INSERT INTO tab_usuarios VALUES (10001, 'pedroperez@correo.com', '1234567890', 'Pedro', 'Perez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
+INSERT INTO tab_usuarios VALUES (10002, 'marialopez@correo.com', '0987654321', 'Maria', 'Lopez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
+INSERT INTO tab_usuarios VALUES (10003, 'yuraniguerrero@correo.com', '1234567890', 'Yurani', 'Guerrero', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
+INSERT INTO tab_usuarios VALUES (10004, 'keniacupaque@correo.com', '1234567890', 'Kenia', 'Cupaque', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
+INSERT INTO tab_usuarios VALUES (10005, 'alexandrapabon@correo.com', '0987654321', 'Alexandra', 'Pabon', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
+INSERT INTO tab_usuarios VALUES (10006, 'pepitoperez@correo.com', '1234567890', 'Pepito', 'Perez', '123456', '3123456789', 'Calle 123 # 45 - 67', '68', '68001');
 
 -- Insertaremos algunos elementos de prueba para la tabla tab_seekfind con los datos correspondientes 
 -- (id_seekfind, id_usuario, id_rol_usuario, estado_usuario, id_tipo, id_elemento, desc_elemento, id_depto, id_munic, id_sitio, desc_sitio, fecha, hora),
 -- siguiento la integridad referencial con la tabla tab_usuarios, tab_tipo_elemento, tab_elemento, tab_deptos, tab_munics y tab_sitios las cuales son las llaves foraneas
 
 -- Insert data for user 'pedroperez@correo.com'
-INSERT INTO tab_seekfind VALUES (2, 'pedroperez@correo.com', '1', '1', 1, 1, 'pastor aleman con un collar azul', '68', '68001', 1, 'Centro Cultural del Oriente', '2022-01-01', '10:00:00');
-INSERT INTO tab_seekfind VALUES (3, 'pedroperez@correo.com', '1', '1', 1, 2, 'gato negro con ojos verdes', '68', '68001', 2, 'Parque del Agua', '2022-01-02', '11:00:00');
-INSERT INTO tab_seekfind VALUES (4, 'pedroperez@correo.com', '1', '1', 1, 3, 'conejo blanco con manchas grises', '68', '68001', 3, 'Catedral de la Sagrada Familia', '2022-01-03', '12:00:00');
+INSERT INTO tab_seekfind VALUES (2, 10001, '1', '1', 1, 1, 'pastor aleman con un collar azul', '68', '68001', 1, 'Centro Cultural del Oriente', '2022-01-01', '10:00:00');
+INSERT INTO tab_seekfind VALUES (3, 10001, '1', '1', 1, 2, 'gato negro con ojos verdes', '68', '68001', 2, 'Parque del Agua', '2022-01-02', '11:00:00');
+INSERT INTO tab_seekfind VALUES (4, 10001, '1', '1', 1, 3, 'conejo blanco con manchas grises', '68', '68001', 3, 'Catedral de la Sagrada Familia', '2022-01-03', '12:00:00');
 
 -- Insert data for user 'marialopez@correo.com'
-INSERT INTO tab_seekfind VALUES (5, 'marialopez@correo.com', '1', '1', 1, 4, 'hámster dorado en una bola de ejercicio', '68', '68001', 4, 'Casa del Libro Total', '2022-01-04', '13:00:00');
-INSERT INTO tab_seekfind VALUES (6, 'marialopez@correo.com', '1', '1', 1, 5, 'pájaro cantando en su jaula', '68', '68001', 5, 'Puente del Bicentenario', '2022-01-05', '14:00:00');
-INSERT INTO tab_seekfind VALUES (7, 'marialopez@correo.com', '1', '1', 1, 6, 'tortuga de caparazón verde', '68', '68001', 6, 'Iglesia de San Pedro Claver', '2022-01-06', '15:00:00');
+INSERT INTO tab_seekfind VALUES (5, 10002, '1', '1', 1, 4, 'hámster dorado en una bola de ejercicio', '68', '68001', 4, 'Casa del Libro Total', '2022-01-04', '13:00:00');
+INSERT INTO tab_seekfind VALUES (6, 10002, '1', '1', 1, 5, 'pájaro cantando en su jaula', '68', '68001', 5, 'Puente del Bicentenario', '2022-01-05', '14:00:00');
+INSERT INTO tab_seekfind VALUES (7, 10002, '1', '1', 1, 6, 'tortuga de caparazón verde', '68', '68001', 6, 'Iglesia de San Pedro Claver', '2022-01-06', '15:00:00');
 
 -- Insert data for user 'yuraniguerrero@correo.com'
-INSERT INTO tab_seekfind VALUES (8, 'yuraniguerrero@correo.com', '1', '1', 1, 7, 'pez de colores en un acuario', '68', '68001', 7, 'Iglesia San Pio', '2022-01-07', '16:00:00');
-INSERT INTO tab_seekfind VALUES (9, 'yuraniguerrero@correo.com', '1', '1', 1, 8, 'iguana tomando el sol', '68', '68001', 8, 'Iglesia San Laureano', '2022-01-08', '17:00:00');
-INSERT INTO tab_seekfind VALUES (10, 'yuraniguerrero@correo.com', '1', '1', 1, 9, 'serpiente albina enrollada en una rama', '68', '68001', 9, 'Universidad Industrial de Santander', '2022-01-09', '18:00:00');
+INSERT INTO tab_seekfind VALUES (8, 10003, '1', '1', 1, 7, 'pez de colores en un acuario', '68', '68001', 7, 'Iglesia San Pio', '2022-01-07', '16:00:00');
+INSERT INTO tab_seekfind VALUES (9, 10003, '1', '1', 1, 8, 'iguana tomando el sol', '68', '68001', 8, 'Iglesia San Laureano', '2022-01-08', '17:00:00');
+INSERT INTO tab_seekfind VALUES (10, 10003, '1', '1', 1, 9, 'serpiente albina enrollada en una rama', '68', '68001', 9, 'Universidad Industrial de Santander', '2022-01-09', '18:00:00');
 
 -- Insert data for user 'pedroperez@correo.com'
-INSERT INTO tab_seekfind VALUES (11, 'pedroperez@correo.com', '1', '1', 1, 10, 'hurón jugando con un juguete', '68', '68001', 10, 'Parque de los Niños', '2022-01-10', '19:00:00');
-INSERT INTO tab_seekfind VALUES (12, 'pedroperez@correo.com', '1', '1', 2, 11, 'cédula de ciudadanía con foto y huellas', '68', '68001', 11, 'Museo de Arte Moderno', '2022-01-11', '20:00:00');
-INSERT INTO tab_seekfind VALUES (13, 'pedroperez@correo.com', '1', '1', 2, 12, 'pasaporte con múltiples visas', '68', '68001', 12, 'Parque San Pío', '2022-01-12', '21:00:00');
+INSERT INTO tab_seekfind VALUES (11, 10001, '1', '1', 1, 10, 'hurón jugando con un juguete', '68', '68001', 10, 'Parque de los Niños', '2022-01-10', '19:00:00');
+INSERT INTO tab_seekfind VALUES (12, 10001, '1', '1', 2, 11, 'cédula de ciudadanía con foto y huellas', '68', '68001', 11, 'Museo de Arte Moderno', '2022-01-11', '20:00:00');
+INSERT INTO tab_seekfind VALUES (13, 10001, '1', '1', 2, 12, 'pasaporte con múltiples visas', '68', '68001', 12, 'Parque San Pío', '2022-01-12', '21:00:00');
 
 -- Insert data for user 'marialopez@correo.com'
-INSERT INTO tab_seekfind VALUES (14, 'marialopez@correo.com', '1', '1', 2, 13, 'licencia de conducción vigente', '68', '68001', 13, 'Parque de las Palmas', '2022-01-13', '22:00:00');
-INSERT INTO tab_seekfind VALUES (15, 'marialopez@correo.com', '1', '1', 2, 14, 'tarjeta de identidad para menores', '68', '68001', 14, 'Parque de los Leones', '2022-01-14', '23:00:00');
-INSERT INTO tab_seekfind VALUES (16, 'marialopez@correo.com', '1', '1', 2, 15, 'registro civil de nacimiento', '68', '68001', 15, 'Parque de los Sueños', '2022-01-15', '00:00:00');
+INSERT INTO tab_seekfind VALUES (14, 10002, '1', '1', 2, 13, 'licencia de conducción vigente', '68', '68001', 13, 'Parque de las Palmas', '2022-01-13', '22:00:00');
+INSERT INTO tab_seekfind VALUES (15, 10002, '1', '1', 2, 14, 'tarjeta de identidad para menores', '68', '68001', 14, 'Parque de los Leones', '2022-01-14', '23:00:00');
+INSERT INTO tab_seekfind VALUES (16, 10002, '1', '1', 2, 15, 'registro civil de nacimiento', '68', '68001', 15, 'Parque de los Sueños', '2022-01-15', '00:00:00');
 
 -- Insert data for user 'yuraniguerrero@correo.com'
-INSERT INTO tab_seekfind VALUES (17, 'yuraniguerrero@correo.com', '1', '1', 2, 16, 'carné estudiantil de institución reconocida', '68', '68001', 16, 'Parque de los Cachorros', '2022-01-16', '01:00:00');
-INSERT INTO tab_seekfind VALUES (18, 'yuraniguerrero@correo.com', '1', '1', 2, 17, 'carné laboral de empresa actual', '68', '68001', 17, 'Parque de los Novios', '2022-01-17', '02:00:00');
-INSERT INTO tab_seekfind VALUES (19, 'yuraniguerrero@correo.com', '1', '1', 2, 18, 'tarjeta profesional de abogado', '68', '68001', 18, 'Parque de las Hormigas', '2022-01-18', '03:00:00');
+INSERT INTO tab_seekfind VALUES (17, 10003, '1', '1', 2, 16, 'carné estudiantil de institución reconocida', '68', '68001', 16, 'Parque de los Cachorros', '2022-01-16', '01:00:00');
+INSERT INTO tab_seekfind VALUES (18, 10003, '1', '1', 2, 17, 'carné laboral de empresa actual', '68', '68001', 17, 'Parque de los Novios', '2022-01-17', '02:00:00');
+INSERT INTO tab_seekfind VALUES (19, 10003, '1', '1', 2, 18, 'tarjeta profesional de abogado', '68', '68001', 18, 'Parque de las Hormigas', '2022-01-18', '03:00:00');
 
 -- Insert data for user 'keniacupaque@correo.com'
-INSERT INTO tab_seekfind VALUES (20, 'keniacupaque@correo.com', '1', '1', 2, 19, 'tarjeta electoral para votar', '68', '68001', 19, 'Parque de los Colores', '2022-01-01', '10:00:00');
-INSERT INTO tab_seekfind VALUES (21, 'keniacupaque@correo.com', '1', '1', 2, 20, 'certificado judicial de antecedentes', '68', '68001', 20, 'Parque de los Niños', '2022-01-02', '11:00:00');
-INSERT INTO tab_seekfind VALUES (22, 'keniacupaque@correo.com', '1', '1', 3, 21, 'celular último modelo con cámara de alta resolución', '68', '68001', 21, 'Museo de Arte Moderno', '2022-01-03', '12:00:00');
+INSERT INTO tab_seekfind VALUES (20, 10004, '1', '1', 2, 19, 'tarjeta electoral para votar', '68', '68001', 19, 'Parque de los Colores', '2022-01-01', '10:00:00');
+INSERT INTO tab_seekfind VALUES (21, 10004, '1', '1', 2, 20, 'certificado judicial de antecedentes', '68', '68001', 20, 'Parque de los Niños', '2022-01-02', '11:00:00');
+INSERT INTO tab_seekfind VALUES (22, 10004, '1', '1', 3, 21, 'celular último modelo con cámara de alta resolución', '68', '68001', 21, 'Museo de Arte Moderno', '2022-01-03', '12:00:00');
 
 -- Insert data for user 'alexandrapabon@correo.com'
-INSERT INTO tab_seekfind VALUES (23, 'alexandrapabon@correo.com', '1', '1', 3, 22, 'billetera de cuero con varios compartimentos', '68', '68001', 22, 'Parque San Pío', '2022-01-04', '13:00:00');
-INSERT INTO tab_seekfind VALUES (24, 'alexandrapabon@correo.com', '1', '1', 3, 23, 'llaves con distintivos llaveros', '68', '68001', 23, 'Parque de las Palmas', '2022-01-05', '14:00:00');
-INSERT INTO tab_seekfind VALUES (25, 'alexandrapabon@correo.com', '1', '1', 3, 24, 'reloj de pulsera con cronómetro', '68', '68001', 24, 'Parque de los Leones', '2022-01-06', '15:00:00');
+INSERT INTO tab_seekfind VALUES (23, 10005, '1', '1', 3, 22, 'billetera de cuero con varios compartimentos', '68', '68001', 22, 'Parque San Pío', '2022-01-04', '13:00:00');
+INSERT INTO tab_seekfind VALUES (24, 10005, '1', '1', 3, 23, 'llaves con distintivos llaveros', '68', '68001', 23, 'Parque de las Palmas', '2022-01-05', '14:00:00');
+INSERT INTO tab_seekfind VALUES (25, 10005, '1', '1', 3, 24, 'reloj de pulsera con cronómetro', '68', '68001', 24, 'Parque de los Leones', '2022-01-06', '15:00:00');
 
--- Insert data for user 'pepitoperez@correo.com'
-INSERT INTO tab_seekfind VALUES (26, 'pepitoperez@correo.com', '1', '1', 3, 25, 'anillo de compromiso con diamante', '68', '68001', 25, 'Parque de los Sueños', '2022-01-07', '16:00:00');
-INSERT INTO tab_seekfind VALUES (27, 'pepitoperez@correo.com', '1', '1', 3, 26, 'collar de perlas finas', '68', '68001', 26, 'Parque de los Cachorros', '2022-01-08', '17:00:00');
-INSERT INTO tab_seekfind VALUES (28, 'pepitoperez@correo.com', '1', '1', 3, 27, 'aretes de plata con diseño elegante', '68', '68001', 27, 'Parque de los Novios', '2022-01-09', '18:00:00');
-
--- Insert data for user 'carlosperez@correo.com'
-INSERT INTO tab_seekfind VALUES (29, 'carlosperez@correo.com', '1', '1', 3, 28, 'gafas de sol polarizadas', '68', '68001', 28, 'Parque de las Hormigas', '2022-01-10', '19:00:00');
-INSERT INTO tab_seekfind VALUES (30, 'carlosperez@correo.com', '1', '1', 3, 29, 'audífonos inalámbricos con cancelación de ruido', '68', '68001', 29, 'Parque de los Colores', '2022-01-11', '20:00:00');
-INSERT INTO tab_seekfind VALUES (31, 'carlosperez@correo.com', '1', '1', 3, 30, 'paraguas plegable resistente al viento', '68', '68001', 1, 'Centro Cultural del Oriente', '2022-01-12', '21:00:00');
-
--- Insert data for user 'jhongonzalez@correo.com'
-INSERT INTO tab_seekfind VALUES (32, 'jhongonzalez@correo.com', '1', '1', 4, 31, 'maleta de mano con ruedas y asa retráctil', '68', '68001', 2, 'Parque del Agua', '2022-01-13', '22:00:00');
-INSERT INTO tab_seekfind VALUES (33, 'jhongonzalez@correo.com', '1', '1', 4, 32, 'maleta de cabina con candado TSA', '68', '68001', 3, 'Catedral de la Sagrada Familia', '2022-01-14', '23:00:00');
-INSERT INTO tab_seekfind VALUES (34, 'jhongonzalez@correo.com', '1', '1', 4, 33, 'maleta de bodega expandible', '68', '68001', 4, 'Casa del Libro Total', '2022-01-15', '00:00:00');
-
--- Insert data for user 'samirfigueroa@correo.com'
-INSERT INTO tab_seekfind VALUES (35, 'samirfigueroa@correo.com', '1', '1', 4, 34, 'bolso de viaje con correa ajustable', '68', '68001', 5, 'Puente del Bicentenario', '2022-01-16', '01:00:00');
-INSERT INTO tab_seekfind VALUES (36, 'samirfigueroa@correo.com', '1', '1', 4, 35, 'mochila impermeable para senderismo', '68', '68001', 6, 'Iglesia de San Pedro Claver', '2022-01-17', '02:00:00');
-INSERT INTO tab_seekfind VALUES (37, 'samirfigueroa@correo.com', '1', '1', 4, 36, 'morral urbano con compartimento para laptop', '68', '68001', 7, 'Iglesia San Pio', '2022-01-18', '03:00:00');
-
--- Insert data for user 'monicagarcia@correo.com'
-INSERT INTO tab_seekfind VALUES (38, 'monicagarcia@correo.com', '1', '1', 4, 37, 'riñonera deportiva con bolsillos múltiples', '68', '68001', 8, 'Iglesia San Laureano', '2022-01-19', '04:00:00');
-INSERT INTO tab_seekfind VALUES (39, 'monicagarcia@correo.com', '1', '1', 4, 38, 'neceser de viaje con botellas de aseo', '68', '68001', 9, 'Universidad Industrial de Santander', '2022-01-20', '05:00:00');
-INSERT INTO tab_seekfind VALUES (40, 'monicagarcia@correo.com', '1', '1', 4, 39, 'portatrajes para viajes de negocios', '68', '68001', 10, 'Parque de los Niños', '2022-01-21', '06:00:00');
-
--- Insert data for user 'danygrajales@correo.com'
-INSERT INTO tab_seekfind VALUES (41, 'danygrajales@correo.com', '1', '1', 4, 40, 'portaordenador acolchado y resistente', '68', '68001', 11, 'Museo de Arte Moderno', '2022-01-22', '07:00:00');
-INSERT INTO tab_seekfind VALUES (42, 'danygrajales@correo.com', '1', '1', 5, 41, 'carro sedán de color rojo', '68', '68001', 12, 'Parque San Pío', '2022-01-23', '08:00:00');
-INSERT INTO tab_seekfind VALUES (43, 'danygrajales@correo.com', '1', '1', 5, 42, 'moto deportiva con escape modificado', '68', '68001', 13, 'Parque de las Palmas', '2022-01-24', '09:00:00');
-
--- Insert data for user 'carlosgrajales@correo.com'
-INSERT INTO tab_seekfind VALUES (44, 'carlosgrajales@correo.com', '1', '1', 5, 43, 'bicicleta de montaña con suspensión delantera', '68', '68001', 14, 'Parque de los Leones', '2022-01-25', '10:00:00');
-INSERT INTO tab_seekfind VALUES (45, 'carlosgrajales@correo.com', '1', '1', 5, 44, 'patineta con diseño gráfico personalizado', '68', '68001', 15, 'Parque de los Sueños', '2022-01-26', '11:00:00');
-INSERT INTO tab_seekfind VALUES (46, 'carlosgrajales@correo.com', '1', '1', 5, 45, 'patines en línea para patinaje artístico', '68', '68001', 16, 'Parque de los Cachorros', '2022-01-27', '12:00:00');
-
--- Insert data for user 'jhonrodriguez@correo.com'
-INSERT INTO tab_seekfind VALUES (47, 'jhonrodriguez@correo.com', '1', '1', 5, 46, 'monopatín de madera con ruedas de poliuretano', '68', '68001', 17, 'Parque de los Novios', '2022-01-28', '13:00:00');
-INSERT INTO tab_seekfind VALUES (48, 'jhonrodriguez@correo.com', '1', '1', 6, 47, 'camisa de algodón de cuadros', '68', '68001', 18, 'Parque de las Hormigas', '2022-01-29', '14:00:00');
-INSERT INTO tab_seekfind VALUES (49, 'jhonrodriguez@correo.com', '1', '1', 6, 48, 'pantalón vaquero con corte recto', '68', '68001', 19, 'Parque de los Colores', '2022-01-30', '15:00:00');
-
--- Insert data for user 'leonardogil@correo.com'
-INSERT INTO tab_seekfind VALUES (50, 'leonardogil@correo.com', '1', '1', 6, 49, 'falda plisada de estilo retro', '68', '68001', 20, 'Parque de los Niños', '2022-01-31', '16:00:00');
-INSERT INTO tab_seekfind VALUES (51, 'leonardogil@correo.com', '1', '1', 6, 50, 'vestido de fiesta con encaje', '68', '68001', 21, 'Museo de Arte Moderno', '2022-02-01', '17:00:00');
-INSERT INTO tab_seekfind VALUES (52, 'leonardogil@correo.com', '1', '1', 6, 51, 'chaqueta de cuero genuino', '68', '68001', 22, 'Parque San Pío', '2022-02-02', '18:00:00');
-
--- Insert data for user 'tomashernandez@correo.com'
-INSERT INTO tab_seekfind VALUES (53, 'tomashernandez@correo.com', '1', '1', 6, 52, 'suéter de lana tejido a mano', '68', '68001', 23, 'Parque de las Palmas', '2022-02-03', '19:00:00');
-INSERT INTO tab_seekfind VALUES (54, 'tomashernandez@correo.com', '1', '1', 6, 53, 'zapatos de vestir negros', '68', '68001', 24, 'Parque de los Leones', '2022-02-04', '20:00:00');
-INSERT INTO tab_seekfind VALUES (55, 'tomashernandez@correo.com', '1', '1', 6, 54, 'calcetines de algodón suaves', '68', '68001', 25, 'Parque de los Sueños', '2022-02-05', '21:00:00');
-
-
+-- Insert data for user 10006
+INSERT INTO tab_seekfind VALUES (26, 10006, '1', '1', 3, 25, 'anillo de compromiso con diamante', '68', '68001', 25, 'Parque de los Sueños', '2022-01-07', '16:00:00');
+INSERT INTO tab_seekfind VALUES (27, 10006, '1', '1', 3, 26, 'collar de perlas finas', '68', '68001', 26, 'Parque de los Cachorros', '2022-01-08', '17:00:00');
+INSERT INTO tab_seekfind VALUES (28, 10006, '1', '1', 3, 27, 'aretes de plata con diseño elegante', '68', '68001', 27, 'Parque de los Novios', '2022-01-09', '18:00:00');
 
 
 

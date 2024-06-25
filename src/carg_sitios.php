@@ -3,7 +3,7 @@
 $municipioId = isset($_GET['munic_id']) ? $_GET['munic_id'] : null;
 if ($municipioId !== null) {
     // Realizar la conexión a la base de datos (asegúrate de incluir tus credenciales y configuración)
-    include 'base_de_datos.php'; // Reemplaza 'conexion.php' con el nombre de tu archivo de conexión
+    include 'base_de_datos.php'; // 'base_de_datos.php' archivo que contiene la conexión a la base de datos.
 
     // Consulta para obtener las ciudades del municipio seleccionado
     $consulta = $base_de_datos->prepare('SELECT a.id_sitio, a.nom_sitio FROM tab_sitios AS a, tab_deptos AS b, tab_munics AS c 

@@ -29,6 +29,7 @@
 
 .container input[type="text"],
 .container input[type="email"],
+.container input[type="number"],
 .container input[type="password"] {
     border: none;
     border-bottom: 1px solid black;

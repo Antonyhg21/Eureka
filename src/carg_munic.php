@@ -3,7 +3,7 @@
 $departamentoId = isset($_GET['depto_id']) ? $_GET['depto_id'] : null;
 if ($departamentoId !== null) {
     // Realizar la conexión a la base de datos (asegúrate de incluir tus credenciales y configuración)
-    include 'base_de_datos.php'; // Reemplaza 'conexion.php' con el nombre de tu archivo de conexión
+    include 'base_de_datos.php'; // 'base_de_datos.php' archivo que contiene la conexión a la base de datos.
 
     // Consulta para obtener las ciudades del departamento seleccionado
     $consulta = $base_de_datos->prepare('SELECT  id_munic, nom_munic FROM tab_munics WHERE id_depto = ? ORDER BY 2');

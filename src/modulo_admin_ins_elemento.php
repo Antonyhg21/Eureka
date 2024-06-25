@@ -1,47 +1,46 @@
-<?php
-include_once "encabezado.php";
-?>
 
-<!DOCTYPE html>
-<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/style-chek.css">
-    <title>Formulario elemento</title>
 </head>
 <?php 
+    // Incluir la conexión a la base de datos
     include_once "base_de_datos.php";
-    /*echo "Entro a Listar para saber si está entrando o no....";*/
+    // Preparar consulta para obtener los tipos de elementos
     $s_tipo_elemento = $base_de_datos->prepare('SELECT a.id_tipo, a.nom_tipo FROM tab_tipo_elemento AS a ORDER BY 2 ASC;');
+    // Ejecutar la consulta
     $s_tipo_elemento->execute();
+    // Obtener todos los resultados como objetos
     $enc_tipo_elemento = $s_tipo_elemento->fetchAll(PDO::FETCH_OBJ);
 ?>
 
-<body class="bg-image">
-    <br><br><br><br><br><br><br>
-    <div class="container mt-5">
+
+    <!-- Espaciado para alinear el formulario -->
+    <div class="container col-md-9">
         <div class="row justify-content-center">
             <div class="col-md-5 col-md-4">
                 <div class="card card-form">
                     <div class="card-header text-center">
-                        <h4>Registro de elemento.</h4>
+                        <h4>Registro de elemento.</h4> <!-- Título del formulario -->
                     </div>
                     <div class="card-body">
+                        <!-- Formulario para insertar un nuevo elemento -->
                         <form action="ins_elemento.php" method="post">
+                            <!-- Selector de tipo de elemento -->
                             <select class="form-select form-control bg-transparent" name="id_tipo" id="id_tipo">
                                 <option value="">SELECCIONE UN TIPO DE ELEMENTO</option>      
                                 <?php foreach($enc_tipo_elemento as $tipo_elemento)
-					            {
-						        ?>
+                                {
+                                ?>
+                                    <!-- Opciones del selector, obtenidas de la base de datos -->
                                     <option value="<?php echo $tipo_elemento->id_tipo?>"><?php echo $tipo_elemento->nom_tipo?></option>
-					            <?php
-					             } ?>
+                                <?php
+                                 } ?>
                             </select>
                             <br>
+                            <!-- Campo para el nombre del elemento -->
                             <input type="text" class="form-control" name="nom_elemento" id="nom_elemento" placeholder="Nombre del elemento" required>
                             <div class="form-group text-center btn-container">
+                                <!-- Botón para enviar el formulario -->
                                 <button type="submit" class="btn btn-primary btn-block">Guardar registro</button>
                             </div>
                         </form>
@@ -50,11 +49,3 @@ include_once "encabezado.php";
             </div>
         </div>
     </div>
-    <br>
-    <br><br><br><br><br><br><br>
-    
-    <?php 
-        include_once "footer.php";
-    ?>
-</body>
-</html>

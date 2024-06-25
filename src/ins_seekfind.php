@@ -1,68 +1,59 @@
 <?php
-/*
-CRUD con PostgreSQL y PHP
-@Jack Antony Hernández González
-@Enero 2024
-==================================================================
-Este archivo inserta los datos enviados a través de formulario.php
-==================================================================
-*/
-?>
+session_start(); // Iniciar la sesión para poder acceder a las variables de sesión
 
-<?php
-session_start(); // Iniciar la sesión
-
+// Verificar si el usuario está conectado, si no, terminar la ejecución con un mensaje
 if (!isset($_SESSION['usuario'])) {
-    // Si el usuario no está conectado, redirigir a la página de inicio de sesión
-    exit("La sesion no esta definida, intente denuevo con una sesion activa");
+    exit("La sesión no está definida, intente de nuevo con una sesión activa");
 }
-// Obtener el id de la sesión actual y guardarlo en una variable para usarlo en la consulta
+
+// Obtener el id del usuario de la sesión actual para usarlo en la inserción
 $variable_sesion = $_SESSION['usuario'];
 
+// Mensaje de depuración para verificar hasta dónde se ejecuta el script correctamente
+echo "hasta aquí funciona esta vaina 1";
 
+// Verificar si todos los campos necesarios fueron enviados desde el formulario
+if (!isset($_POST["id_tipo"]) ||
+    !isset($_POST["id_elemento"]) ||
+    !isset($_POST["desc_elemento"]) ||
+    !isset($_POST["id_depto"]) ||
+    !isset($_POST["id_munic"]) ||
+    !isset($_POST["id_sitio"]) ||
+    !isset($_POST["desc_sitio"]) ||
+    !isset($_POST["fecha"]) ||
+    !isset($_POST["hora"])) {
+    exit(); // Si falta algún campo, terminar la ejecución
+}
 
-echo "hasta aqui funciona esta vaina 1";
-if (!isset($_POST["id_tipo"])  ||
-    !isset($_POST["id_elemento"])  ||
-    !isset($_POST["desc_elemento"])  ||
-    !isset($_POST["id_depto"])  ||
-    !isset($_POST["id_munic"])  ||
-    !isset($_POST["id_sitio"])  ||
-    !isset($_POST["desc_sitio"])  ||
-    !isset($_POST["fecha"])  ||
-    !isset($_POST["hora"]))
-    {
-    exit();
-    }
-#Si todo va bien, se ejecuta esta parte del código..., si no, nos jodimos
-echo "hasta aqui funciona esta vaina 1";
+// Mensaje de depuración para verificar hasta dónde se ejecuta el script correctamente
+echo "hasta aquí funciona esta vaina 1";
+
+// Incluir el archivo de conexión a la base de datos
 include_once "base_de_datos.php";
-$id_tipo            = $_POST["id_tipo"];
-$id_elemento        = $_POST["id_elemento"];
-$desc_elemento      = $_POST["desc_elemento"];
-$id_depto           = $_POST["id_depto"];
-$id_munic           = $_POST["id_munic"];
-$id_sitio           = $_POST["id_sitio"];
-$desc_sitio         = $_POST["desc_sitio"];
-$fecha              = $_POST["fecha"];
-$hora               = $_POST["hora"];
-/*
-Al incluir el archivo "base_de_datos.php", todas sus variables están
-a nuestra disposición. Por lo que podemos acceder a ellas tal como si hubiéramos
-copiado y pegado el código
- */
 
+// Recuperar los valores enviados desde el formulario y almacenarlos en variables
+$id_tipo        = $_POST["id_tipo"];
+$id_elemento    = $_POST["id_elemento"];
+$desc_elemento  = $_POST["desc_elemento"];
+$id_depto       = $_POST["id_depto"];
+$id_munic       = $_POST["id_munic"];
+$id_sitio       = $_POST["id_sitio"];
+$desc_sitio     = $_POST["desc_sitio"];
+$fecha          = $_POST["fecha"];
+$hora           = $_POST["hora"];
+
+// Preparar la sentencia SQL para insertar los datos en la base de datos
 $sentencia = $base_de_datos->prepare("SELECT fun_insert_seekfind(?,?,?,?,?,?,?,?,?,?);");
-$resultado = $sentencia->execute([$variable_sesion, $id_tipo, $id_elemento, $desc_elemento, $id_depto, $id_munic, $id_sitio, $desc_sitio, $fecha, $hora] ); # Pasar en el mismo orden de los ?
-#execute regresa un booleano. True en caso de que todo vaya bien, falso en caso contrario.
-#Con eso podemos evaluar*/
-echo $resultado;
+
+// Ejecutar la sentencia SQL pasando los valores de las variables en el mismo orden de los ?
+$resultado = $sentencia->execute([$variable_sesion, $id_tipo, $id_elemento, $desc_elemento, $id_depto, $id_munic, $id_sitio, $desc_sitio, $fecha, $hora]);
+
+// Verificar si la ejecución de la sentencia SQL fue exitosa
 if ($resultado === true) {
-    # Redireccionar a la lista
-    echo "Registro Insertado";
-	header("Location: home.php");
-} else
-    {
+    echo "Registro Insertado"; // Mensaje de éxito
+    header("Location: home.php"); // Redireccionar al usuario a la página principal
+} else {
+    // Si la inserción falló, mostrar mensajes de error
     echo "Registro NO Insertado";
     echo "Algo salió mal. Por favor verifica que la tabla exista";
-    }
+}

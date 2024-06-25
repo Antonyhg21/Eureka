@@ -1,21 +1,4 @@
-<?php
-// Incluir el archivo de encabezado común a todas las páginas
-include_once "encabezado.php";
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Definir la codificación de caracteres para la página -->
-    <meta charset="UTF-8">
-    <!-- Asegurar la correcta visualización y el diseño responsive en dispositivos móviles -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título de la página, visible en la pestaña del navegador -->
-    <title>Lista de usuario</title>
-</head>
-<body class="body">
-    <!-- Espaciado para separar el contenido del inicio de la página -->
-    <br><br>
-    <div class="container mt-5">
+<div class="container col-md-9">
         <!-- Título de la sección -->
         <h1>Usuarios:</h1>
         <!-- Formulario para buscar usuarios -->
@@ -57,14 +40,7 @@ include_once "encabezado.php";
                 </tbody>
             </table>
         </div>
-        <!-- Espaciado después de la tabla -->
-        <br>
-        <!-- Botón para volver a la página principal -->
-        <div class="center-button">
-            <button class="btn btn-primary" onclick="window.location.href='home.php'">Volver</button>
-        </div>
+
     </div>
     <!-- Incluir el script de JavaScript para la búsqueda dinámica de usuarios -->
     <script src="../js/ajax_buscar_usuarios.js"></script>
-</body>
-</html>

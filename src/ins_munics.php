@@ -2,7 +2,7 @@
 /*
 CRUD con PostgreSQL y PHP
 @Jack Antony Hernández González
-@Enero 2024
+@Junio 2024
 ==================================================================
 Este archivo inserta los datos enviados a través de formulario.php
 en la base de datos utilizando una función almacenada de PostgreSQL.
@@ -10,7 +10,9 @@ en la base de datos utilizando una función almacenada de PostgreSQL.
 */
 
 // Verificar si los datos requeridos fueron enviados
-if (!isset($_POST["id_tipo"]) || !isset($_POST["nom_elemento"])) {
+if (!isset($_POST["id_depto"])  ||
+    !isset($_POST["id_munic"])  ||
+    !isset($_POST["nom_munic"])) {
     // Si no se enviaron los datos necesarios, terminar la ejecución
     exit();
 }
@@ -24,14 +26,16 @@ copiado y pegado el código.
 include_once "base_de_datos.php";
 
 // Recuperar los datos enviados desde el formulario
-$id_tipo = $_POST["id_tipo"];
-$nom_elemento = $_POST["nom_elemento"];
+$id_depto       = $_POST["id_depto"];
+$id_munic       = $_POST["id_munic"];
+$nom_munic      = $_POST["nom_munic"];
 
-// Preparar la sentencia SQL para insertar el nuevo elemento
-$sentencia = $base_de_datos->prepare("SELECT fun_insert_elemento(?,?);");
+
+// Preparar la sentencia SQL para insertar el municipio
+$sentencia = $base_de_datos->prepare("SELECT fun_insert_munics(?,?,?);");
 
 // Ejecutar la sentencia SQL pasando los valores correspondientes
-$resultado = $sentencia->execute([$id_tipo, $nom_elemento]);
+$resultado = $sentencia->execute([$id_depto, $id_munic, $nom_munic]);
 
 /*
 Execute regresa un booleano. True en caso de que todo vaya bien, falso en caso contrario.
@@ -42,7 +46,7 @@ Con eso podemos evaluar
 if ($resultado === true) {
     // Si el elemento se insertó correctamente, redireccionar al administrador
     echo "Registro Insertado";
-    header("Location: admin.php");
+    header("Location: seccion_admin.php");
 } else {
     // Si hubo un error al insertar, mostrar un mensaje de error
     echo "Registro NO Insertado";
