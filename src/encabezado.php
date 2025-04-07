@@ -56,7 +56,6 @@ if (!isset($_SESSION['usuario'])) {
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                 <li><a class="dropdown-item" href="<?php echo "config_usuario.php?"?>">Mi perfil</a></li>
-                                <li><a class="dropdown-item" href="<?php echo "lista_usuarios.php?"?>">Administrar usuarios</a></li>
                                 <li><a class="dropdown-item" href="<?php echo "seccion_admin.php?"?>">Administrar</a></li>
                                 <li><a class="dropdown-item" href="cerrar_sesion.php">Cerrar sesión</a></li>
                             </ul>

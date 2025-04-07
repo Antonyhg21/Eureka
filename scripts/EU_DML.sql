@@ -1161,7 +1161,7 @@ INSERT INTO tab_munics VALUES ('99','99773','CUMARIBO');
 
 -- Insertaremos los tipos de elementos
 INSERT INTO tab_tipo_elemento VALUES (1,'Mascotas');
-INSERT INTO tab_tipo_elemento VALUES (2,'Ducumentos');
+INSERT INTO tab_tipo_elemento VALUES (2,'Documentos');
 INSERT INTO tab_tipo_elemento VALUES (3,'Objetos Personales');
 INSERT INTO tab_tipo_elemento VALUES (4,'Equipaje');
 INSERT INTO tab_tipo_elemento VALUES (5,'Vehiculos');

@@ -19,7 +19,7 @@ include_once "encabezado.php"; // Incluye el archivo de encabezado
         f.nom_munic, a.id_sitio, g.nom_sitio, a.desc_sitio, a.fecha, a.hora   
     FROM tab_seekfind AS a, tab_usuarios AS b, tab_tipo_elemento AS c, 
         tab_elemento AS d, tab_deptos AS e, tab_munics AS f, tab_sitios AS g
-    WHERE a.id_usuario  = b.id_usuario  AND
+    ON a.id_usuario  = b.id_usuario  AND
         a.estado_usuario = true AND
         a.id_tipo       = c.id_tipo     AND
         a.id_elemento   = d.id_elemento AND
